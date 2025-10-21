@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maria Baniski — Portfólio</title>
+  <meta name="description" content="Portfólio de Maria Baniski — Identidade Visual, Logos, Produção e Edição de Conteúdo Digital. Contraste entre o maximalismo extravagante e o minimalismo sofisticado." />
+  <meta property="og:title" content="Maria Baniski — Portfólio" />
+  <meta property="og:description" content="Identidades visuais que marcam, conteúdo que brilha. Extravagância x Minimalismo com contraste elegante." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Playfair+Display:wght@400;500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fbf8fc;
+      --surface:#ffffff;
+      --ink:#0a0a0a;
+      --muted:#5c5c5c;
+      --line:#ece9f1;
+      --accent:#ff29a6;      /* pink neon extravagante */
+      --accent-dark:#940061;  /* vinho magenta */
+      --glow:#ff6fd8;         /* brilho */
+      --radius:22px;
+      --shadow-soft:0 14px 36px rgba(0,0,0,.08);
+      --shadow-neon:0 0 26px rgba(255,41,166,.45);
+
+      /* minimal palette */
+      --min-bg:#f8f6f2;       /* bege suave */
+      --min-ink:#2a2a2a;      /* café escuro */
+      --min-line:#e1ded9;     /* linhas discretas */
+      --min-shadow:0 6px 18px rgba(0,0,0,.05);
+      --min-accent:#7b5e3c;   /* tom café para destaque */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+    a{text-decoration:none;color:inherit}
+
+    header.site{padding:20px 32px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);z-index:50;border-bottom:1px solid var(--line)}
+    .brand{font-family:Syne,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.4px;color:var(--accent)}
+    nav a{margin-left:22px;font-weight:600;color:var(--muted)}
+    nav a:hover{color:var(--accent)}
+
+    .hero{padding:84px 32px 56px;text-align:center;max-width:960px;margin:0 auto}
+    .hero h1{font-family:Syne,sans-serif;font-size:clamp(44px,6vw,76px);line-height:1.05;margin:0;color:var(--accent-dark);text-shadow:0 0 18px var(--glow)}
+    .hero p{font-size:20px;color:var(--muted);margin:18px auto 0;max-width:70ch}
+    .cta{margin-top:28px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn{padding:12px 22px;border-radius:14px;font-weight:800;cursor:pointer;transition:all .25s ease;font-family:Syne,sans-serif}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-neon)}
+    .btn.primary:hover{transform:translateY(-2px);background:var(--accent-dark)}
+    .btn.secondary{border:2px solid var(--min-accent);color:var(--min-accent);background:transparent}
+    .btn.secondary:hover{background:var(--min-accent);color:#fff}
+
+    section{padding:70px 32px;max-width:1160px;margin:0 auto;transition:all .6s ease}
+    .section-head{text-align:center;margin-bottom:34px}
+    .section-head h2{font-family:Syne,sans-serif;font-size:36px;color:var(--accent-dark)}
+    .section-head p{color:var(--muted)}
+
+    .slider-wrap{position:relative}
+    .slider{display:flex;overflow-x:auto;scroll-behavior:smooth;gap:22px;padding-bottom:10px}
+    .slider::-webkit-scrollbar{height:8px}
+    .slider::-webkit-scrollbar-thumb{background:#e9d0ef;border-radius:999px}
+    .slide{flex:0 0 68%;border-radius:20px;overflow:hidden;position:relative}
+    .media{width:100%;height:320px;overflow:hidden}
+    .media img{width:100%;height:100%;object-fit:cover;display:block}
+    .caption{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(6px);padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.06)}
+    .caption strong{font-family:Syne,sans-serif}
+    .arrow{position:absolute;top:42%;transform:translateY(-50%);border:none;color:#fff;font-size:26px;line-height:1;border-radius:50%;width:44px;height:44px;cursor:pointer}
+
+    #extravagancia .slide{box-shadow:var(--shadow-neon)}
+    #extravagancia .media{background:linear-gradient(135deg,#ff29a6,#ff6fd8,#ff9be1)}
+    #extravagancia .arrow{background:var(--accent);box-shadow:var(--shadow-neon)}
+    #extravagancia .caption{background:rgba(255,255,255,.9)}
+
+    #minimalismo{background:var(--min-bg);border-top:1px solid var(--min-line);border-bottom:1px solid var(--min-line);font-family:"Playfair Display",serif}
+    #minimalismo .section-head h2{color:var(--min-ink);font-weight:500;font-family:"Playfair Display",serif}
+    #minimalismo .section-head p{font-family:"Manrope",sans-serif;font-weight:300;color:#444}
+    #minimalismo .slide{background:#fff;border:1px solid var(--min-line);box-shadow:var(--min-shadow)}
+    #minimalismo .media{height:300px;background:#f6f5f3}
+    #minimalismo .caption{background:#fff;border:1px solid var(--min-line);color:var(--min-ink);font-family:"Playfair Display",serif;font-weight:400;font-size:15px}
+    #minimalismo .arrow{background:var(--min-accent)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow-soft)}
+    .card h3{margin:0 0 6px;font-family:Syne,sans-serif}
+    .card p{margin:0;color:var(--muted)}
+
+    @media(max-width:900px){
+      .slide{flex:0 0 86%}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="brand">Maria Baniski</div>
+    <nav>
+      <a href="#extravagancia">Extravagância</a>
+      <a href="#minimalismo">Minimalismo</a>
+      <a href="#sobre">O que eu faço</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Identidade Única. Forte. Extravagante.</h1>
+    <p>Eu crio identidades visuais que brilham e ficam na memória. Da coragem do maximalismo ao silêncio elegante do minimalismo — a sua marca com assinatura própria.</p>
+    <div class="cta">
+      <a class="btn primary" href="#extravagancia">Explorar Extravagância</a>
+      <a class="btn secondary" href="#minimalismo">Explorar Minimalismo</a>
+    </div>
+  </section>
+
+  <section id="extravagancia">
+    <div class="section-head">
+      <h2>Extravagância ✦ Maximalista</h2>
+      <p>Pink, brilho e ousadia. O lado vibrante da minha identidade.</p>
+    </div>
+    <div class="slider-wrap">
+      <button class="arrow left" onclick="scrollSlider('extravagancia-slider',-1)">‹</button>
+      <div class="slider" id="extravagancia-slider">
+        <div class="slide"><div class="media"><img src="extravagancia1.jpeg"/></div><div class="caption"><strong>Presença que domina</strong></div></div>
+        <div class="slide"><div class="media"><img src="extravagancia2.jpg"/></div><div class="caption"><strong>Brilho sem pedir licença</strong></div></div>
+        <div class="slide"><div class="media"><img src="extravagancia3.jpg"/></div><div class="caption"><strong>Identidade que explode</strong></div></div>
+        <div class="slide"><div class="media"><img src="extravagancia4.jpeg"/></div><div class="caption"><strong>Feito para ser lembrado</strong></div></div>
+      </div>
+      <button class="arrow right" onclick="scrollSlider('extravagancia-slider',1)">›</button>
+    </div>
+  </section>
+
+  <section id="minimalismo">
+    <div class="section-head">
+      <h2>Minimalismo • Essencial</h2>
+      <p>Chique, silencioso e estratégico. O luxo do necessário.</p>
+    </div>
+    <div class="slider-wrap">
+      <button class="arrow left" onclick="scrollSlider('minimalismo-slider',-1)">‹</button>
+      <div class="slider" id="minimalismo-slider">
+        <div class="slide"><div class="media"><img src="minimalismo1.jpg"/></div><div class="caption"><strong>Simplicidade que impressiona</strong></div></div>
+        <div class="slide"><div class="media"><img src="minimalismo2.jpg"/></div><div class="caption"><strong>Elegante sem esforço</strong></div></div>
+        <div class="slide"><div class="media"><img src="minimalismo3.png"/></div><div class="caption"><strong>Menos, porém marcante</strong></div></div>
+      </div>
+      <button class="arrow right" onclick="scrollSlider('minimalismo-slider',1)">›</button>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="section-head">
+      <h2>O que eu faço</h2>
+      <p>Identidade visual completa e conteúdo que valoriza sua marca.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Identidade Visual</h3><p>Pesquisa, conceito, paleta, tipografia e manual de marca objetivo.</p></div>
+      <div class="card"><h3>Logotipos</h3><p>Logo principal + versões responsivas (mono, horizontal, vertical).</p></div>
+      <div class="card"><h3>Produção & Edição</h3><p>Direção de arte, edição de foto/vídeo e templates para social.</p></div>
+      <div class="card"><h3>Conteúdo a partir do cliente</h3><p>Organização, tratamento e montagem de conteúdo enviado.</p></div>
+      <div class="card"><h3>Kits Visuais</h3><p>Pacotes para posts, capas e reels alinhados à identidade.</p></div>
+      <div class="card"><h3>Sem tráfego pago</h3><p>Foco total em linguagem visual, consistência e estética.</p></div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="section-head">
+      <h2>Contato</h2>
+      <p>Vamos criar algo inesquecível.</p>
+    </div>
+    <div class="card" style="max-width:760px;margin:0 auto;text-align:center">
+      <p><strong>E‑mail:</strong> <a href="mailto:maribaniski@icloud.com">maribaniski@icloud.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5542988354409">(42) 98835‑4409</a></p>
+      <p><strong>Instagram Profissional:</strong> em breve</p>
+    </div>
+  </section>
+
+  <footer class="site" style="text-align:center;padding:24px;color:var(--muted)">© <span id="year"></span> Maria Baniski — Identidade com assinatura</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function scrollSlider(id,dir){
+      const slider=document.getElementById(id);
+      const slideWidth=slider.querySelector('.slide').offsetWidth+22;
+      slider.scrollBy({left:dir*slideWidth,behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
