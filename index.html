@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Maria Baniski — Portfólio</title>
+  <meta name="description" content="Portfólio de Maria Baniski — Identidade Visual, Logos, Produção e Edição de Conteúdo. Contraste explícito entre o maximalismo extravagante e o minimalismo sofisticado, com experiência impecável no desktop e no mobile." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Playfair+Display:wght@400;500&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Base */
+      --bg:#fbf8fc; --surface:#ffffff; --ink:#0a0a0a; --muted:#5c5c5c; --line:#ece9f1;
+      --radius:22px; --shadow-soft:0 14px 36px rgba(0,0,0,.08);
+      /* Extravagância */
+      --accent:#ff29a6; --accent-dark:#940061; --glow:#ff6fd8; --shadow-neon:0 0 26px rgba(255,41,166,.45);
+      /* Minimalismo (baunilha & café) */
+      --min-vanilla:#f6efe6; --min-bg:#fbf7f1; --min-ink:#3d2f23; --min-ink-strong:#2b2118; --min-line:#e7dfd4; --min-accent:#6a5036; --min-shadow:0 10px 24px rgba(42,28,18,.08);
+
+      /* Dimensões padronizadas */
+      --wrap-max:1160px;
+      --gap:24px;
+      --slide-w-desktop:560px;   /* largura fixa desktop (padroniza) */
+      --media-ratio-desktop:16/10; /* altura consistente */
+      --slide-w-mobile:88vw;     /* mobile cheio, com respiro */
+      --media-ratio-mobile:4/3;  /* mais alto no celular */
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{text-decoration:none;color:inherit}
+
+    /* Header */
+    header.site{padding:16px max(24px,env(safe-area-inset-left)) 16px max(24px,env(safe-area-inset-right));display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);z-index:50;border-bottom:1px solid var(--line)}
+    .brand{font-family:Syne,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.4px;color:var(--accent)}
+    nav a{margin-left:18px;font-weight:600;color:var(--muted)}
+    nav a:hover{color:var(--accent)}
+
+    /* Layout wrapper */
+    .wrap{max-width:var(--wrap-max);margin:0 auto;padding:0 24px}
+
+    /* Hero */
+    .hero{padding:74px 0 48px;text-align:center}
+    .hero h1{font-family:Syne,sans-serif;font-size:clamp(40px,6vw,72px);line-height:1.05;margin:0;color:var(--accent-dark);text-shadow:0 0 16px var(--glow)}
+    .hero p{font-size:18px;color:var(--muted);margin:16px auto 0;max-width:70ch}
+    .cta{margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{padding:12px 20px;border-radius:14px;font-weight:800;cursor:pointer;transition:all .25s ease;font-family:Syne,sans-serif}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-neon)}
+    .btn.primary:hover{transform:translateY(-2px);background:var(--accent-dark)}
+    .btn.secondary{border:2px solid var(--min-accent);color:var(--min-accent);background:transparent}
+    .btn.secondary:hover{background:var(--min-accent);color:#fff}
+
+    section{padding:64px 0}
+    .section-head{text-align:center;margin-bottom:24px}
+    .section-head h2{font-family:Syne,sans-serif;font-size:32px;color:var(--accent-dark);margin:0}
+    .section-head p{color:var(--muted);margin:8px 0 0}
+
+    /* ===== SLIDER (padronizado) ===== */
+    .slider-wrap{position:relative}
+    .slider{display:flex;gap:var(--gap);padding-bottom:10px;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+    .slider::-webkit-scrollbar{height:8px}
+    .slider::-webkit-scrollbar-thumb{background:#e9d0ef;border-radius:999px}
+
+    .slide{flex:0 0 var(--slide-w-desktop);scroll-snap-align:center;border-radius:20px;overflow:hidden;position:relative;background:#fff}
+    .media{width:100%;aspect-ratio:var(--media-ratio-desktop);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff}
+    .media img{width:100%;height:100%;object-fit:cover;display:block}
+    /* legenda compacta e consistente */
+    .caption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(6px);padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.06);font-weight:700}
+    .caption strong{font-family:Syne,sans-serif}
+
+    .arrow{position:absolute;top:42%;transform:translateY(-50%);border:none;color:#fff;font-size:24px;line-height:1;border-radius:50%;width:44px;height:44px;cursor:pointer}
+
+    /* Extravagância */
+    #extravagancia .slide{box-shadow:0 18px 60px rgba(255,41,166,.22)}
+    #extravagancia .media{background:linear-gradient(135deg,#ff29a6,#ff6fd8,#ff9be1)}
+    #extravagancia .arrow{background:var(--accent);box-shadow:0 0 20px rgba(255,41,166,.45)}
+
+    /* Minimalismo (baunilha + café mais presentes) */
+    #minimalismo{background:linear-gradient(180deg,var(--min-vanilla),var(--min-bg));border-top:1px solid var(--min-line);border-bottom:1px solid var(--min-line);font-family:"Playfair Display",serif}
+    #minimalismo .section-head h2{color:var(--min-ink-strong);font-weight:500}
+    #minimalismo .section-head p{font-family:"Manrope",sans-serif;font-weight:300;color:#4a3a2c}
+    #minimalismo .slide{box-shadow:var(--min-shadow);border:1px solid var(--min-line)}
+    #minimalismo .media{background:var(--min-vanilla)}
+    #minimalismo .media img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;padding:14px}
+    #minimalismo .caption{background:#fff;border:1px solid var(--min-line);color:var(--min-ink);font-family:"Playfair Display",serif;font-weight:400;font-size:15px}
+    #minimalismo .arrow{background:var(--min-accent)}
+
+    /* SOBRE */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow-soft)}
+    .card h3{margin:0 0 6px;font-family:Syne,sans-serif}
+    .card p{margin:0;color:var(--muted)}
+
+    /* ===== Viewer (galeria imersiva) ===== */
+    .viewer{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+    .viewer.active{display:flex;animation:fadeIn .28s ease}
+    .viewer::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 10%, rgba(255,41,166,.3), transparent), rgba(0,0,0,.82);backdrop-filter:blur(6px)}
+    .viewer-frame{position:relative;max-width:92vw;max-height:86vh;border-radius:18px;overflow:hidden;box-shadow:0 30px 120px rgba(0,0,0,.5)}
+    .viewer img{display:block;max-width:92vw;max-height:86vh}
+    .viewer-caption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6));color:#fff;font-family:Syne,sans-serif;display:flex;justify-content:space-between;align-items:flex-end}
+    .viewer-nav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+    .viewer-btn{pointer-events:auto;border:none;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:26px;display:grid;place-items:center}
+    .viewer-btn:hover{background:rgba(255,255,255,.22)}
+    .viewer-close{position:absolute;top:16px;right:16px}
+    .viewer-tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+    /* ====== MOBILE ====== */
+    @media(max-width:900px){
+      nav a{margin-left:12px}
+      .hero{padding:56px 0 36px}
+      .hero p{font-size:16px}
+      .slider{padding:0 6vw 12px}
+      .slide{flex-basis:var(--slide-w-mobile)}
+      .media{aspect-ratio:var(--media-ratio-mobile)}
+      .arrow{display:none} /* setas somem, navegação por swipe */
+      .caption{left:12px;bottom:12px;padding:8px 10px}
+      .grid{grid-template-columns:1fr}
+      .viewer-frame{max-width:96vw;max-height:84vh}
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="brand">Maria Baniski</div>
+    <nav>
+      <a href="#extravagancia">Extravagância</a>
+      <a href="#minimalismo">Minimalismo</a>
+      <a href="#sobre">O que eu faço</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Identidade Única. Forte. Extravagante.</h1>
+      <p>Eu crio identidades visuais que brilham e ficam na memória. Da coragem do maximalismo ao silêncio elegante do minimalismo — a sua marca com assinatura própria.</p>
+      <div class="cta">
+        <a class="btn primary" href="#extravagancia">Explorar Extravagância</a>
+        <a class="btn secondary" href="#minimalismo">Explorar Minimalismo</a>
+      </div>
+    </section>
+
+    <!-- EXTRAVAGÂNCIA -->
+    <section id="extravagancia">
+      <div class="section-head">
+        <h2>Extravagância ✦ Maximalista</h2>
+        <p>Pink, brilho e ousadia. O lado vibrante da minha identidade.</p>
+      </div>
+      <div class="slider-wrap">
+        <button class="arrow left" onclick="scrollSlider('extravagancia-slider',-1)">‹</button>
+        <div class="slider" id="extravagancia-slider">
+          <div class="slide"><div class="media" data-group="extravagancia" data-index="0"><img loading="lazy" src="extravagancia1.jpeg" alt="Presença que domina"/></div><div class="caption"><strong>Presença que domina</strong></div></div>
+          <div class="slide"><div class="media" data-group="extravagancia" data-index="1"><img loading="lazy" src="extravagancia2.jpg" alt="Brilho sem pedir licença"/></div><div class="caption"><strong>Brilho sem pedir licença</strong></div></div>
+          <div class="slide"><div class="media" data-group="extravagancia" data-index="2"><img loading="lazy" src="extravagancia3.jpg" alt="Identidade que explode"/></div><div class="caption"><strong>Identidade que explode</strong></div></div>
+          <div class="slide"><div class="media" data-group="extravagancia" data-index="3"><img loading="lazy" src="extravagancia4.jpeg" alt="Feito para ser lembrado"/></div><div class="caption"><strong>Feito para ser lembrado</strong></div></div>
+        </div>
+        <button class="arrow right" onclick="scrollSlider('extravagancia-slider',1)">›</button>
+      </div>
+    </section>
+
+    <!-- MINIMALISMO -->
+    <section id="minimalismo">
+      <div class="section-head">
+        <h2>Minimalismo • Essencial</h2>
+        <p>Chique, silencioso e estratégico. O luxo do necessário.</p>
+      </div>
+      <div class="slider-wrap">
+        <button class="arrow left" onclick="scrollSlider('minimalismo-slider',-1)">‹</button>
+        <div class="slider" id="minimalismo-slider">
+          <div class="slide"><div class="media" data-group="minimalismo" data-index="0"><img loading="lazy" src="minimalismo1.jpg" alt="Simplicidade que impressiona"/></div><div class="caption" style="color:var(--min-ink)"><strong style="font-family:'Playfair Display',serif;font-weight:400">Simplicidade que impressiona</strong></div></div>
+          <div class="slide"><div class="media" data-group="minimalismo" data-index="1"><img loading="lazy" src="minimalismo2.jpg" alt="Elegante sem esforço"/></div><div class="caption" style="color:var(--min-ink)"><strong style="font-family:'Playfair Display',serif;font-weight:400">Elegante sem esforço</strong></div></div>
+          <div class="slide"><div class="media" data-group="minimalismo" data-index="2"><img loading="lazy" src="minimalismo3.png" alt="Menos, porém marcante"/></div><div class="caption" style="color:var(--min-ink)"><strong style="font-family:'Playfair Display',serif;font-weight:400">Menos, porém marcante</strong></div></div>
+        </div>
+        <button class="arrow right" onclick="scrollSlider('minimalismo-slider',1)">›</button>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="section-head">
+        <h2>O que eu faço</h2>
+        <p>Identidade visual completa e conteúdo que valoriza sua marca.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Identidade Visual</h3><p>Pesquisa, conceito, paleta, tipografia e manual de marca objetivo.</p></div>
+        <div class="card"><h3>Logotipos</h3><p>Logo principal + versões responsivas (mono, horizontal, vertical).</p></div>
+        <div class="card"><h3>Produção & Edição</h3><p>Direção de arte, edição de foto/vídeo e templates para social.</p></div>
+        <div class="card"><h3>Conteúdo a partir do cliente</h3><p>Organização, tratamento e montagem de conteúdo enviado.</p></div>
+        <div class="card"><h3>Kits Visuais</h3><p>Pacotes para posts, capas e reels alinhados à identidade.</p></div>
+        <div class="card"><h3>Sem tráfego pago</h3><p>Foco total em linguagem visual, consistência e estética.</p></div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="section-head">
+        <h2>Contato</h2>
+        <p>Vamos criar algo inesquecível.</p>
+      </div>
+      <div class="card" style="max-width:760px;margin:0 auto;text-align:center">
+        <p><strong>E‑mail:</strong> <a href="mailto:maribaniski@icloud.com">maribaniski@icloud.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5542988354409">(42) 98835‑4409</a></p>
+        <p><strong>Instagram Profissional:</strong> em breve</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site" style="text-align:center;padding:24px;color:var(--muted)">© <span id="year"></span> Maria Baniski — Identidade com assinatura</footer>
+
+  <!-- VIEWER (galeria imersiva) -->
+  <div class="viewer" id="viewer" aria-hidden="true">
+    <div class="viewer-frame">
+      <img id="viewerImg" alt="Projeto" />
+      <div class="viewer-caption">
+        <div>
+          <div class="viewer-tag" id="viewerTag">PROJETO</div>
+          <div id="viewerTitle" style="font-size:20px;font-weight:800"></div>
+        </div>
+        <button class="viewer-btn viewer-close" onclick="closeViewer()">✕</button>
+      </div>
+      <div class="viewer-nav">
+        <button class="viewer-btn" onclick="prevViewer()">‹</button>
+        <button class="viewer-btn" onclick="nextViewer()">›</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function scrollSlider(id,dir){
+      const slider=document.getElementById(id);
+      const slideWidth=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--slide-w-desktop'))+parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--gap'));
+      slider.scrollBy({left:dir*slideWidth,behavior:'smooth'});
+    }
+
+    // ===== Viewer Imersivo (com swipe) =====
+    const galleries = { extravagancia: [], minimalismo: [] };
+    const medias = document.querySelectorAll('.media[data-group]');
+    medias.forEach(m => {
+      const group = m.dataset.group;
+      const img = m.querySelector('img');
+      const title = m.parentElement.querySelector('.caption strong')?.textContent || '';
+      galleries[group].push({ src: img.getAttribute('src'), title });
+      m.addEventListener('click', () => openViewer(group, parseInt(m.dataset.index||0,10)));
+    });
+
+    let current = { group: 'extravagancia', index: 0 };
+    const viewer = document.getElementById('viewer');
+    const viewerImg = document.getElementById('viewerImg');
+    const viewerTitle = document.getElementById('viewerTitle');
+    const viewerTag = document.getElementById('viewerTag');
+
+    function openViewer(group, index){
+      current = { group, index };
+      const item = galleries[group][index];
+      viewerImg.src = item.src;
+      viewerTitle.textContent = item.title;
+      viewerTag.textContent = group.toUpperCase();
+      viewer.classList.add('active');
+      viewer.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function closeViewer(){ viewer.classList.remove('active'); viewer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    function nextViewer(){ const len = galleries[current.group].length; current.index = (current.index + 1) % len; openViewer(current.group, current.index); }
+    function prevViewer(){ const len = galleries[current.group].length; current.index = (current.index - 1 + len) % len; openViewer(current.group, current.index); }
+    viewer.addEventListener('click', (e)=>{ if(e.target.id==='viewer') closeViewer(); });
+    document.addEventListener('keydown', (e)=>{ if(!viewer.classList.contains('active')) return; if(e.key==='Escape') closeViewer(); if(e.key==='ArrowRight') nextViewer(); if(e.key==='ArrowLeft') prevViewer(); });
+
+    // Swipe mobile no viewer
+    let sx=0, ex=0; viewer.addEventListener('touchstart',e=>{sx=e.changedTouches[0].screenX}); viewer.addEventListener('touchend',e=>{ex=e.changedTouches[0].screenX; if(ex-sx>40) prevViewer(); if(sx-ex>40) nextViewer();});
+  </script>
+</body>
+</html>
